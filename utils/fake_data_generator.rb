@@ -5,12 +5,11 @@ module FakeDataGenerator
   LIMIT = 20
 
   class << self
-
     def authors
       @authors = Array.new(rand(5..LIMIT)) do
         Author.new(
           name = Faker::Name.name,
-          bio = "Author Bio"
+          bio = 'Author Bio'
         )
       end
     end
@@ -45,6 +44,5 @@ module FakeDataGenerator
         )
       end
     end
-
   end
 end

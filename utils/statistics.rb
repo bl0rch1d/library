@@ -16,7 +16,6 @@ module Statistics
       .size
   end
 
-
   private
 
   def get_top(num, entity)

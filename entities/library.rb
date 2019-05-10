@@ -1,15 +1,14 @@
 require 'yaml'
 require 'pathname'
 
-require_relative "author"
-require_relative "book"
-require_relative "reader"
-require_relative "order"
+require_relative 'author'
+require_relative 'book'
+require_relative 'reader'
+require_relative 'order'
 
-require_relative "../utils/statistics"
-require_relative "../utils/fake_data_generator"
-require_relative "../config"
-
+require_relative '../utils/statistics'
+require_relative '../utils/fake_data_generator'
+require_relative '../config'
 
 class Library
   include Statistics
@@ -46,13 +45,12 @@ class Library
   # Library app must be persisted, that’s why we must have the ability to store/load data from the library.
   # save/load/generate/delete actions are available
   def data(action)
-    raise ArgumentError, "Invalid action" unless private_methods.include? :"#{action}_data"
+    raise ArgumentError, 'Invalid action' unless private_methods.include? :"#{action}_data"
 
-    Dir.mkdir(Config::DB_PATH, 0700) unless Pathname.new(Config::DB_PATH).exist?
+    Dir.mkdir(Config::DB_PATH, 0o700) unless Pathname.new(Config::DB_PATH).exist?
 
     send :"#{action}_data"
   end
-
 
   private
 
@@ -66,7 +64,7 @@ class Library
   def save_data
     for_entities do |entity|
       data = instance_variable_get("@#{entity}s").to_yaml
-              
+
       File.write(Config::DB_PATH + "#{entity}s.yaml", data)
     end
   end
@@ -75,7 +73,7 @@ class Library
   def load_data
     for_entities do |entity|
       data = YAML.load(File.read(Config::DB_PATH + "#{entity}s.yaml"))
-              
+
       instance_variable_set("@#{entity}s", data)
     end
   end
