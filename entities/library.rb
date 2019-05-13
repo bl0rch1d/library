@@ -1,17 +1,12 @@
-require 'yaml'
-require 'pathname'
+# frozen_string_literal: true
 
-require_relative 'author'
-require_relative 'book'
-require_relative 'reader'
-require_relative 'order'
+require_relative '../autoload'
 
-require_relative '../utils/statistics'
-require_relative '../utils/fake_data_generator'
-require_relative '../config'
-
+# Creates object which represents Library
+# Helps manage the basic needs of Library
 class Library
   include Statistics
+  include Database
 
   attr_accessor :authors, :readers, :books, :orders
 
@@ -23,23 +18,22 @@ class Library
   end
 
   # Library app must have an ability to add each of the entity to itself
-  def add_entity(entity, name)
-    raise ArgumentError unless Config::ENTITIES.include? name.to_sym
-
-    instance_variable_get("@#{name}s") << entity
+  def add_entity(entity)
+    case entity
+    when Author  then @authors << entity
+    when Book    then @books << entity
+    when Order   then @orders << entity
+    when Reader  then @readers << entity
+    else
+      raise ArgumentError
+    end
 
     data :save
   end
 
   # Library must have the ability to show some custom statistics about the library processes
   def statistics
-    puts <<-EOS
-      ============================= Library statistics ==============================
-        Top Reader: #{get_top_reader}
-        Most Popular Book: #{get_top_books}
-        Number of Readers of the Most Popular Books: #{get_readers_of_popular_books}
-      ===============================================================================
-    EOS
+    show
   end
 
   # Library app must be persisted, that’s why we must have the ability to store/load data from the library.
@@ -57,24 +51,6 @@ class Library
   def for_entities
     Config::ENTITIES.each do |entity|
       yield entity
-    end
-  end
-
-  # All the data of the library can be to stored/loaded into some storage (YML,JSON etc)
-  def save_data
-    for_entities do |entity|
-      data = instance_variable_get("@#{entity}s").to_yaml
-
-      File.write(Config::DB_PATH + "#{entity}s.yaml", data)
-    end
-  end
-
-  # All the data of the library can be to stored/loaded into some storage (YML,JSON etc)
-  def load_data
-    for_entities do |entity|
-      data = YAML.load(File.read(Config::DB_PATH + "#{entity}s.yaml"))
-
-      instance_variable_set("@#{entity}s", data)
     end
   end
 

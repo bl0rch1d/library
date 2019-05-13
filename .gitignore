@@ -1,4 +1,8 @@
 /db/
 /.vscode/
 
+*.rb.swp
+
 *.pdf
+*.yaml
+*.json
