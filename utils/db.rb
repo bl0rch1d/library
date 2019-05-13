@@ -13,12 +13,12 @@ module Database
       readers: @readers
     }
 
-    File.write(Config::DB_PATH + 'db.yaml', data)
+    File.write(Config::DB_PATH, data.to_yaml)
   end
 
   # All the data of the library can be to stored/loaded into some storage (YML,JSON etc)
   def load_data
-    data = YAML.load(File.read(Config::DB_PATH + "#{entity}s.yaml"))
+    data = YAML.load(File.read(Config::DB_PATH))
 
     @authors  = data[:authors]
     @books    = data[:books]
