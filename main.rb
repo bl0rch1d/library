@@ -4,8 +4,6 @@ require_relative 'entities/library'
 
 lib = Library.new
 
-lib.add_entity(Author.new(name: "Name", bio: "Bio"))
-
 # --- Generate random data using Faker gem ---
 lib.data :generate
 
