@@ -20,18 +20,15 @@ module Database
   # All the data of the library can be to stored/loaded into some storage
   # (YML,JSON etc)
   def load_data
-    file = Config::DB_PATH + Config::DB_FILE
+    yaml = File.read(Config::DB_PATH + Config::DB_FILE)
+    data = Psych.safe_load(
+      yaml, [Symbol, Date, Author, Book, Reader, Order], aliases: true
+    )
 
-    if Pathname.new(file).exist?
-      data = YAML.load(File.read(file))
-
-      @authors  = data[:authors]
-      @books    = data[:books]
-      @orders   = data[:orders]
-      @readers  = data[:readers]
-    else
-      generate_data
-    end
+    @authors  = data[:authors]
+    @books    = data[:books]
+    @orders   = data[:orders]
+    @readers  = data[:readers]
   end
 
   # Generating random data using Faker gem
