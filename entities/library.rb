@@ -31,17 +31,23 @@ class Library
     data :save
   end
 
-  # Library must have the ability to show some custom statistics about the library processes
+  # Library must have the ability to show some custom statistics about
+  # the library processes
   def statistics
     show
   end
 
-  # Library app must be persisted, that’s why we must have the ability to store/load data from the library.
+  # Library app must be persisted, thats why we must have the ability
+  # to store/load data from the library.
   # save/load/generate/delete actions are available
   def data(action)
-    raise ArgumentError, 'Invalid action' unless private_methods.include? :"#{action}_data"
+    unless private_methods.include? :"#{action}_data"
+      raise ArgumentError, 'Invalid action'
+    end
 
-    Dir.mkdir(Config::DB_PATH, 0o700) unless Pathname.new(Config::DB_PATH).exist?
+    unless Pathname.new(Config::DB_PATH).exist?
+      Dir.mkdir(Config::DB_PATH, 0o700)
+    end
 
     send :"#{action}_data"
   end

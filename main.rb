@@ -11,7 +11,7 @@ lib = Library.new
 # lib.data :save
 
 # --- Load data from db/ ---
-# lib.data :load
+lib.data :load
 
 # --- Wipe all data from db/ ---
 # lib.data :delete
@@ -20,6 +20,4 @@ lib = Library.new
 # 1. Top Reader
 # 2. Most Popular Books
 # 3. Number of Readers of the Most Popular Books
-# lib.statistics
-
-
+lib.statistics

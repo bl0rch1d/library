@@ -19,6 +19,8 @@ class Order
   private
 
   def valid?(book, reader, date)
-    book.instance_of?(Book) && reader.instance_of?(Reader) && date.instance_of?(Date)
+    book.instance_of?(Book) && \
+      reader.instance_of?(Reader) && \
+      date.instance_of?(Date)
   end
 end

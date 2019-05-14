@@ -3,13 +3,13 @@
 # Contain methods which helps to build Library statistics
 module Statistics
   def show
-    puts <<-EOS
+    puts <<-ENDOFSTRING
       ============================= Library statistics ==============================
         Top Reader: #{get_top_reader}
         Most Popular Book: #{get_top_books}
         Number of Readers of the Most Popular Books: #{get_readers_of_popular_books}
       ===============================================================================
-    EOS
+    ENDOFSTRING
   end
 
   def get_top_reader(quantity: 1)

@@ -4,7 +4,8 @@
 module Database
   private
 
-  # All the data of the library can be to stored/loaded into some storage (YML,JSON etc)
+  # All the data of the library can be to stored/loaded into some storage
+  # (YML,JSON etc)
   def save_data
     data = {
       authors: @authors,
@@ -13,12 +14,13 @@ module Database
       readers: @readers
     }
 
-    File.write(Config::DB_PATH, data.to_yaml)
+    File.write(Config::DB_PATH + Config::DB_FILE, data.to_yaml)
   end
 
-  # All the data of the library can be to stored/loaded into some storage (YML,JSON etc)
+  # All the data of the library can be to stored/loaded into some storage
+  # (YML,JSON etc)
   def load_data
-    data = YAML.load(File.read(Config::DB_PATH))
+    data = YAML.load(File.read(Config::DB_PATH + Config::DB_FILE))
 
     @authors  = data[:authors]
     @books    = data[:books]
@@ -35,19 +37,19 @@ module Database
   # Generating random data using Faker gem
   def generate_data
     for_entities do |entity|
-      instance_variable_set("@#{entity}s", FakeDataGenerator.method("#{entity}s").call)
+      instance_variable_set("@#{entity}s", FakeDataGenerator
+        .method("#{entity}s").call)
     end
   end
 
   # Remove all saved data
   def delete_data
-    for_entities do |entity|
-      file = Config::DB_PATH + "#{entity}s.yaml"
+    for_entities do |_entity|
+      file = Config::DB_PATH + Config::DB_FILE
 
       return unless Pathname.new(file).exist?
 
       File.delete(file)
     end
   end
-
 end

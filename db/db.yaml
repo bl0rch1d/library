@@ -1,0 +1,156 @@
+---
+:authors:
+- &1 !ruby/object:Author
+  name: Heath Ryan
+  bio: Author Bio
+- &8 !ruby/object:Author
+  name: Cyril Borer
+  bio: Author Bio
+- &5 !ruby/object:Author
+  name: Dr. Willia Dach
+  bio: Author Bio
+- &4 !ruby/object:Author
+  name: Isadora Jakubowski
+  bio: Author Bio
+- &6 !ruby/object:Author
+  name: Lashaunda O'Kon
+  bio: Author Bio
+- &7 !ruby/object:Author
+  name: Thurman Mann
+  bio: Author Bio
+- &3 !ruby/object:Author
+  name: Clark Reinger
+  bio: Author Bio
+- &2 !ruby/object:Author
+  name: Elizabeth Stamm
+  bio: Author Bio
+- !ruby/object:Author
+  name: Carman Bogan IV
+  bio: Author Bio
+:books:
+- !ruby/object:Book
+  title: Number the Stars
+  author: *1
+- &10 !ruby/object:Book
+  title: The Monkey's Raincoat
+  author: *2
+- &14 !ruby/object:Book
+  title: Let Us Now Praise Famous Men
+  author: *3
+- !ruby/object:Book
+  title: To Your Scattered Bodies Go
+  author: *4
+- !ruby/object:Book
+  title: The Yellow Meads of Asphodel
+  author: *2
+- &9 !ruby/object:Book
+  title: The Heart Is Deceitful Above All Things
+  author: *3
+- !ruby/object:Book
+  title: If I Forget Thee Jerusalem
+  author: *2
+- &16 !ruby/object:Book
+  title: The Way of All Flesh
+  author: *5
+- !ruby/object:Book
+  title: Antic Hay
+  author: *6
+- !ruby/object:Book
+  title: Mother Night
+  author: *4
+- &11 !ruby/object:Book
+  title: Nectar in a Sieve
+  author: *1
+- !ruby/object:Book
+  title: A Handful of Dust
+  author: *1
+- !ruby/object:Book
+  title: Beyond the Mexique Bay
+  author: *3
+- &12 !ruby/object:Book
+  title: O Jerusalem!
+  author: *7
+- &15 !ruby/object:Book
+  title: Blue Remembered Earth
+  author: *2
+- !ruby/object:Book
+  title: Pale Kings and Princes
+  author: *8
+:orders:
+- !ruby/object:Order
+  book: *9
+  reader: &21 !ruby/object:Reader
+    name: Santana Bauch
+    email: blair@stroman.io
+    city: Lake Nellie
+    street: O'Kon Corners
+    house: '424'
+  date: 2019-05-14
+- !ruby/object:Order
+  book: *10
+  reader: &13 !ruby/object:Reader
+    name: Shanel Bode
+    email: jenelltoy@wiza.biz
+    city: North Kimberely
+    street: Lubowitz Summit
+    house: '3226'
+  date: 2019-05-14
+- !ruby/object:Order
+  book: *11
+  reader: &17 !ruby/object:Reader
+    name: Laree Macejkovic
+    email: tereamckenzie@wuckert.net
+    city: Maximoshire
+    street: Armstrong Prairie
+    house: '7932'
+  date: 2019-05-14
+- !ruby/object:Order
+  book: *12
+  reader: *13
+  date: 2019-05-14
+- !ruby/object:Order
+  book: *14
+  reader: &18 !ruby/object:Reader
+    name: Bambi Harvey
+    email: emory@kautzer.com
+    city: Bechtelarside
+    street: Schneider Extensions
+    house: '1014'
+  date: 2019-05-14
+- !ruby/object:Order
+  book: *15
+  reader: &19 !ruby/object:Reader
+    name: Mrs. Raymon Ullrich
+    email: mingcasper@kreiger.co
+    city: North Heribertohaven
+    street: Leannon Ridge
+    house: '375'
+  date: 2019-05-14
+- !ruby/object:Order
+  book: *16
+  reader: &20 !ruby/object:Reader
+    name: Marlin Kerluke
+    email: augusta@daugherty.biz
+    city: Kennethmouth
+    street: Dorris Unions
+    house: '68565'
+  date: 2019-05-14
+:readers:
+- !ruby/object:Reader
+  name: Pansy Turner
+  email: aida@kundeconsidine.name
+  city: Lake Timshire
+  street: Garth Rapid
+  house: '32090'
+- *17
+- !ruby/object:Reader
+  name: Charley Weissnat I
+  email: leticia@rau.net
+  city: Jastland
+  street: Daron Light
+  house: '73090'
+- *18
+- *19
+- *13
+- *20
+- *21
