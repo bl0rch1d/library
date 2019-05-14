@@ -1,6 +1,8 @@
 /.vscode/
+/db/
 
 *.rb.swp
 
+*.yaml
 *.pdf
 *.json

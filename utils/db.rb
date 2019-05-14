@@ -34,15 +34,9 @@ module Database
     end
   end
 
-  def for_entities
-    Config::ENTITIES.each do |entity|
-      yield entity
-    end
-  end
-
   # Generating random data using Faker gem
   def generate_data
-    for_entities do |entity|
+    Config::ENTITIES.each do |entity|
       instance_variable_set("@#{entity}s", FakeDataGenerator
         .method("#{entity}s").call)
     end
@@ -50,12 +44,10 @@ module Database
 
   # Remove all saved data
   def delete_data
-    for_entities do |_entity|
-      file = Config::DB_PATH + Config::DB_FILE
+    file = Config::DB_PATH + Config::DB_FILE
 
-      return unless Pathname.new(file).exist?
+    return unless Pathname.new(file).exist?
 
-      File.delete(file)
-    end
+    File.delete(file)
   end
 end

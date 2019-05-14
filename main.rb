@@ -5,13 +5,13 @@ require_relative 'entities/library'
 lib = Library.new
 
 # --- Generate random data using Faker gem ---
-# lib.data :generate
+lib.data :generate
 
 # --- Save existing data for each entity to db/ ---
-# lib.data :save
+lib.data :save
 
 # --- Load data from db/ ---
-lib.data :load
+# lib.data :load
 
 # --- Wipe all data from db/ ---
 # lib.data :delete
