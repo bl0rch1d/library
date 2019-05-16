@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
-# Creates object which represents a Reader data for library database
+require_relative '../utils/validate'
+
 class Reader
-  attr_accessor :name, :email, :city, :street, :house
+  include Validate
+
+  attr_reader :name, :email, :city, :street, :house
 
   def initialize(name:, email:, city:, street:, house:)
     raise ArgumentError unless valid? name, email, city, street, house
@@ -15,12 +18,6 @@ class Reader
   end
 
   def to_s
-    "#{@name}, #{@email}, #{@city}, #{@street}. #{@house}"
-  end
-
-  private
-
-  def valid?(*props)
-    props.all? { |prop| prop.instance_of?(String) && !prop.empty? }
+    "#{name}, #{email}, #{city}, #{street}. #{house}"
   end
 end

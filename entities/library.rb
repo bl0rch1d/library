@@ -2,22 +2,17 @@
 
 require_relative '../autoload'
 
-# Creates object which represents Library
-# Helps manage the basic needs of Library
 class Library
   include Statistics
   include Database
 
-  attr_accessor :authors, :readers, :books, :orders
-
-  def initialize(authors = [], books = [], readers = [], orders = [])
+  def initialize(authors: [], books: [], readers: [], orders: [])
     @authors = authors
     @books = books
     @readers = readers
     @orders = orders
   end
 
-  # Library app must have an ability to add each of the entity to itself
   def add_entity(entity)
     case entity
     when Author  then @authors << entity
@@ -27,28 +22,9 @@ class Library
     else
       raise ArgumentError
     end
-
-    data :save
   end
 
-  # Library must have the ability to show some custom statistics about
-  # the library processes
   def statistics
     show
-  end
-
-  # Library app must be persisted, thats why we must have the ability
-  # to store/load data from the library.
-  # save/load/generate/delete actions are available
-  def data(action)
-    unless private_methods.include? :"#{action}_data"
-      raise ArgumentError, 'Invalid action'
-    end
-
-    unless Pathname.new(Config::DB_PATH).exist?
-      Dir.mkdir(Config::DB_PATH, 0o700)
-    end
-
-    send :"#{action}_data"
   end
 end

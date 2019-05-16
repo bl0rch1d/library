@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-# Contain methods which helps to build Library statistics
 module Statistics
   def show
     puts <<-ENDOFSTRING
@@ -32,11 +31,11 @@ module Statistics
   private
 
   def get_top(quantity, entity_name)
-    res = @orders
-          .group_by(&entity_name)
-          .max_by(quantity) { |_entity, orders| orders.size }
-          .map(&:first)
+    result = @orders
+             .group_by(&entity_name)
+             .max_by(quantity) { |_entity, orders| orders.size }
+             .map(&:first)
 
-    quantity == 1 ? res.first : res
+    quantity == 1 ? result.first : result
   end
 end

@@ -1,11 +1,21 @@
 # frozen_string_literal: true
 
-# Contain methods for persistence functonality
 module Database
+  DB_PATH = './db/'
+  DB_FILE = 'db.yaml'
+
+  def data(action)
+    unless private_methods.include? :"#{action}_data"
+      raise ArgumentError, 'Invalid action'
+    end
+
+    Dir.mkdir(DB_PATH, 0o700) unless Pathname.new(DB_PATH).exist?
+
+    send :"#{action}_data"
+  end
+
   private
 
-  # All the data of the library can be to stored/loaded into some storage
-  # (YML,JSON etc)
   def save_data
     data = {
       authors: @authors,
@@ -17,34 +27,35 @@ module Database
     File.write(Config::DB_PATH + Config::DB_FILE, data.to_yaml)
   end
 
-  # All the data of the library can be to stored/loaded into some storage
-  # (YML,JSON etc)
   def load_data
-    yaml = File.read(Config::DB_PATH + Config::DB_FILE)
+    file = DB_PATH + DB_FILE
+    path = Pathname.new(file).exist? ? file : './seed.yaml'
+
+    yaml = File.read(path)
     data = Psych.safe_load(
-      yaml, [Symbol, Date, Author, Book, Reader, Order], aliases: true
+      yaml, [Symbol, Date, Author, Book, Reader, Order], [], true
     )
 
-    @authors  = data[:authors]
-    @books    = data[:books]
-    @orders   = data[:orders]
-    @readers  = data[:readers]
+    parse data
   end
 
-  # Generating random data using Faker gem
   def generate_data
-    Config::ENTITIES.each do |entity|
-      instance_variable_set("@#{entity}s", FakeDataGenerator
-        .method("#{entity}s").call)
-    end
+    data = FakeDataGenerator.call
+    parse data
   end
 
-  # Remove all saved data
   def delete_data
-    file = Config::DB_PATH + Config::DB_FILE
+    file = DB_PATH + DB_FILE
 
     return unless Pathname.new(file).exist?
 
     File.delete(file)
+  end
+
+  def parse(data)
+    @authors  = data[:authors]
+    @books    = data[:books]
+    @orders   = data[:orders]
+    @readers  = data[:readers]
   end
 end

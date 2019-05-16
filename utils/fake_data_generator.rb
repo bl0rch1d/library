@@ -3,11 +3,21 @@
 require 'date'
 require 'faker'
 
-# Generates random data for Library testing
 module FakeDataGenerator
   LIMIT = 20
 
   class << self
+    def call
+      {
+        authors: authors,
+        books: books,
+        readers: readers,
+        orders: orders
+      }
+    end
+
+    private
+
     def authors
       @authors = Array.new(rand(5..LIMIT)) do
         Author.new(

@@ -1,23 +1,20 @@
 # frozen_string_literal: true
 
-# Creates object which represents a book
+require_relative '../utils/validate'
+
 class Book
-  attr_accessor :title, :author
+  include Validate
+
+  attr_reader :title, :author
 
   def initialize(title:, author:)
-    raise ArgumentError unless valid? title, author
+    raise ArgumentError unless book_valid? title, author
 
     @title = title
     @author = author
   end
 
   def to_s
-    "#{@title}, #{@author}"
-  end
-
-  private
-
-  def valid?(title, author)
-    title.instance_of?(String) && !title.empty? && author.instance_of?(Author)
+    "#{title}, #{author}"
   end
 end

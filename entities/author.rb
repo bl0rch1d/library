@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
-# Creates object which represents a book author
+require_relative '../utils/validate'
+
 class Author
-  attr_accessor :name, :bio
+  include Validate
+
+  attr_reader :name, :bio
 
   def initialize(name:, bio:)
     raise ArgumentError unless valid? name, bio
@@ -12,12 +15,6 @@ class Author
   end
 
   def to_s
-    @name
-  end
-
-  private
-
-  def valid?(*props)
-    props.all? { |prop| prop.instance_of?(String) && !prop.empty? }
+    name
   end
 end

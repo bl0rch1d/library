@@ -1,11 +1,14 @@
 # frozen_string_literal: true
 
-# Creates object which represents a store order
+require_relative '../utils/validate'
+
 class Order
-  attr_accessor :book, :reader, :date
+  include Validate
+
+  attr_reader :book, :reader, :date
 
   def initialize(book:, reader:, date:)
-    raise ArgumentError unless valid? book, reader, date
+    raise ArgumentError unless order_valid? book, reader, date
 
     @book = book
     @reader = reader
@@ -13,14 +16,6 @@ class Order
   end
 
   def to_s
-    "#{@book}, #{@reader}, #{@date}"
-  end
-
-  private
-
-  def valid?(book, reader, date)
-    book.instance_of?(Book) && \
-      reader.instance_of?(Reader) && \
-      date.instance_of?(Date)
+    "#{book}, #{reader}, #{date}"
   end
 end
