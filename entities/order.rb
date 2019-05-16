@@ -8,7 +8,7 @@ class Order
   attr_reader :book, :reader, :date
 
   def initialize(book:, reader:, date:)
-    raise ArgumentError unless order_valid? book, reader, date
+    validate book, reader, date
 
     @book = book
     @reader = reader
@@ -17,5 +17,13 @@ class Order
 
   def to_s
     "#{book}, #{reader}, #{date}"
+  end
+
+  private
+
+  def validate(book, reader, date)
+    check_class book, Book
+    check_class reader, Reader
+    check_class date, Date
   end
 end

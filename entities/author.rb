@@ -8,7 +8,7 @@ class Author
   attr_reader :name, :bio
 
   def initialize(name:, bio:)
-    raise ArgumentError unless valid? name, bio
+    validate name, bio
 
     @name = name
     @bio = bio
@@ -16,5 +16,11 @@ class Author
 
   def to_s
     name
+  end
+
+  private
+
+  def validate(*props)
+    props.each(&method(:check_emptiness))
   end
 end

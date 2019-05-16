@@ -8,7 +8,7 @@ class Reader
   attr_reader :name, :email, :city, :street, :house
 
   def initialize(name:, email:, city:, street:, house:)
-    raise ArgumentError unless valid? name, email, city, street, house
+    validate name, email, city, street, house
 
     @name = name
     @email = email
@@ -19,5 +19,11 @@ class Reader
 
   def to_s
     "#{name}, #{email}, #{city}, #{street}. #{house}"
+  end
+
+  private
+
+  def validate(*props)
+    props.each(&method(:check_emptiness))
   end
 end

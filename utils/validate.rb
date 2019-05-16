@@ -7,30 +7,11 @@ module Validate
 
   private
 
-  def valid?(*props)
-    props.all? do |prop|
-      check_class(prop, String)
-
-      !prop.empty?
-    end
+  def check_class(prop, klass)
+    raise WrongClassError unless prop.instance_of? klass
   end
 
-  def book_valid?(title, author)
-    check_class(title, String)
-    check_class(author, Author)
-
-    !title.empty?
-  end
-
-  def order_valid?(book, reader, date)
-    check_class(book, Book)
-    check_class(reader, Reader)
-    check_class(date, Date)
-
-    true
-  end
-
-  def check_class(instance, klass)
-    raise WrongClassError unless instance.instance_of? klass
+  def check_emptiness(prop)
+    raise EmptyStringError if prop.empty?
   end
 end

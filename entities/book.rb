@@ -8,7 +8,7 @@ class Book
   attr_reader :title, :author
 
   def initialize(title:, author:)
-    raise ArgumentError unless book_valid? title, author
+    validate title, author
 
     @title = title
     @author = author
@@ -16,5 +16,12 @@ class Book
 
   def to_s
     "#{title}, #{author}"
+  end
+
+  private
+
+  def validate(title, author)
+    check_emptiness title
+    check_class author, Author
   end
 end
