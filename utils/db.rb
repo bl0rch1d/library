@@ -24,7 +24,7 @@ module Database
       readers: @readers
     }
 
-    File.write(Config::DB_PATH + Config::DB_FILE, data.to_yaml)
+    File.write(DB_PATH + DB_FILE, data.to_yaml)
   end
 
   def load_data
