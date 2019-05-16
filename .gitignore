@@ -1,0 +1,7 @@
+/.vscode/
+/db/
+
+*.rb.swp
+
+*.pdf
+*.json

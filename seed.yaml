@@ -1,0 +1,587 @@
+---
+:authors:
+- &9 !ruby/object:Author
+  name: Dr. Valentine Carroll
+  bio: Author Bio
+- &5 !ruby/object:Author
+  name: Luther Boyer
+  bio: Author Bio
+- &1 !ruby/object:Author
+  name: Lawana Fahey
+  bio: Author Bio
+- &3 !ruby/object:Author
+  name: Sadye Trantow
+  bio: Author Bio
+- &2 !ruby/object:Author
+  name: Jewel Mills Jr.
+  bio: Author Bio
+- &10 !ruby/object:Author
+  name: Earlene Fritsch
+  bio: Author Bio
+- &8 !ruby/object:Author
+  name: Modesto Rosenbaum
+  bio: Author Bio
+- &6 !ruby/object:Author
+  name: Mrs. Del Kulas
+  bio: Author Bio
+- &7 !ruby/object:Author
+  name: Bradford D'Amore
+  bio: Author Bio
+- &4 !ruby/object:Author
+  name: Tran Hegmann II
+  bio: Author Bio
+:books:
+- !ruby/object:Book
+  title: The Wealth of Nations
+  author: *1
+- &36 !ruby/object:Book
+  title: Some Buried Caesar
+  author: *1
+- &26 !ruby/object:Book
+  title: A Catskill Eagle
+  author: *2
+- !ruby/object:Book
+  title: To Say Nothing of the Dog
+  author: *3
+- !ruby/object:Book
+  title: Absalom, Absalom!
+  author: *4
+- !ruby/object:Book
+  title: A Handful of Dust
+  author: *3
+- &13 !ruby/object:Book
+  title: That Hideous Strength
+  author: *5
+- &54 !ruby/object:Book
+  title: Tiger! Tiger!
+  author: *6
+- &33 !ruby/object:Book
+  title: Shall not Perish
+  author: *4
+- !ruby/object:Book
+  title: Butter In a Lordly Dish
+  author: *7
+- &12 !ruby/object:Book
+  title: The Moving Finger
+  author: *1
+- &57 !ruby/object:Book
+  title: By Grand Central Station I Sat Down and Wept
+  author: *8
+- &18 !ruby/object:Book
+  title: Some Buried Caesar
+  author: *8
+- &25 !ruby/object:Book
+  title: I Sing the Body Electric
+  author: *9
+- &37 !ruby/object:Book
+  title: No Highway
+  author: *7
+- &52 !ruby/object:Book
+  title: Taming a Sea Horse
+  author: *4
+- !ruby/object:Book
+  title: To Your Scattered Bodies Go
+  author: *3
+- &43 !ruby/object:Book
+  title: Consider Phlebas
+  author: *5
+- &39 !ruby/object:Book
+  title: To Your Scattered Bodies Go
+  author: *2
+- &53 !ruby/object:Book
+  title: The Glory and the Dream
+  author: *6
+- &63 !ruby/object:Book
+  title: A Passage to India
+  author: *3
+- &58 !ruby/object:Book
+  title: After Many a Summer Dies the Swan
+  author: *8
+- &60 !ruby/object:Book
+  title: Great Work of Time
+  author: *4
+- &41 !ruby/object:Book
+  title: Recalled to Life
+  author: *10
+- &17 !ruby/object:Book
+  title: The Line of Beauty
+  author: *10
+- &32 !ruby/object:Book
+  title: Let Us Now Praise Famous Men
+  author: *6
+- &42 !ruby/object:Book
+  title: I Sing the Body Electric
+  author: *3
+- &30 !ruby/object:Book
+  title: A Many-Splendoured Thing
+  author: *5
+- &15 !ruby/object:Book
+  title: If I Forget Thee Jerusalem
+  author: *4
+- !ruby/object:Book
+  title: Wildfire at Midnight
+  author: *9
+- !ruby/object:Book
+  title: Rosemary Sutcliff
+  author: *3
+- &23 !ruby/object:Book
+  title: Françoise Sagan
+  author: *2
+- &56 !ruby/object:Book
+  title: By Grand Central Station I Sat Down and Wept
+  author: *3
+- !ruby/object:Book
+  title: Far From the Madding Crowd
+  author: *10
+- &24 !ruby/object:Book
+  title: Tiger! Tiger!
+  author: *10
+- &46 !ruby/object:Book
+  title: Of Human Bondage
+  author: *10
+- &28 !ruby/object:Book
+  title: Fear and Trembling
+  author: *10
+- &20 !ruby/object:Book
+  title: If I Forget Thee Jerusalem
+  author: *10
+- &44 !ruby/object:Book
+  title: Of Human Bondage
+  author: *7
+- !ruby/object:Book
+  title: Antic Hay
+  author: *7
+- &45 !ruby/object:Book
+  title: A Handful of Dust
+  author: *5
+- !ruby/object:Book
+  title: The Parliament of Man
+  author: *2
+- &40 !ruby/object:Book
+  title: Oh! To be in England
+  author: *6
+- &47 !ruby/object:Book
+  title: The Yellow Meads of Asphodel
+  author: *3
+- !ruby/object:Book
+  title: I Will Fear No Evil
+  author: *3
+- &48 !ruby/object:Book
+  title: Recalled to Life
+  author: *6
+- !ruby/object:Book
+  title: Nectar in a Sieve
+  author: *7
+- &61 !ruby/object:Book
+  title: What's Become of Waring
+  author: *5
+- &49 !ruby/object:Book
+  title: A Time to Kill
+  author: *1
+- &50 !ruby/object:Book
+  title: Sleep the Brave
+  author: *8
+- &51 !ruby/object:Book
+  title: No Country for Old Men
+  author: *7
+- &11 !ruby/object:Book
+  title: The Wives of Bath
+  author: *4
+- &35 !ruby/object:Book
+  title: Carrion Comfort
+  author: *5
+- &62 !ruby/object:Book
+  title: Little Hands Clapping
+  author: *6
+- &29 !ruby/object:Book
+  title: The Torment of Others
+  author: *6
+- &16 !ruby/object:Book
+  title: An Evil Cradling
+  author: *9
+- !ruby/object:Book
+  title: The Stars' Tennis Balls
+  author: *5
+- &31 !ruby/object:Book
+  title: Pale Kings and Princes
+  author: *1
+- &55 !ruby/object:Book
+  title: The World, the Flesh and the Devil
+  author: *4
+- !ruby/object:Book
+  title: Look Homeward, Angel
+  author: *5
+- &59 !ruby/object:Book
+  title: Tirra Lirra by the River
+  author: *5
+- !ruby/object:Book
+  title: The Sun Also Rises
+  author: *5
+- !ruby/object:Book
+  title: The Doors of Perception
+  author: *7
+- &34 !ruby/object:Book
+  title: Consider the Lilies
+  author: *6
+:orders:
+- !ruby/object:Order
+  book: *11
+  reader: &14 !ruby/object:Reader
+    name: Dr. Desmond Kautzer
+    email: lupe@walsh.io
+    city: Risaville
+    street: Issac View
+    house: '52369'
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *12
+  reader: &19 !ruby/object:Reader
+    name: Mr. Millard Larkin
+    email: lindsey@rohan.com
+    city: Cummeratafort
+    street: Luke Rue
+    house: '6198'
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *13
+  reader: *14
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *15
+  reader: *14
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *16
+  reader: &27 !ruby/object:Reader
+    name: Marhta Doyle DVM
+    email: josue@barrowsfisher.co
+    city: Port Idabury
+    street: Monahan Forest
+    house: '1486'
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *15
+  reader: &21 !ruby/object:Reader
+    name: Alva Orn
+    email: leigh@marquardt.com
+    city: Balistrerihaven
+    street: Joline Loaf
+    house: '32106'
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *15
+  reader: &22 !ruby/object:Reader
+    name: Lorenza Shanahan MD
+    email: lucas@jerde.org
+    city: Lake Kathey
+    street: Elisha Junctions
+    house: '3311'
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *17
+  reader: *14
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *18
+  reader: *14
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *15
+  reader: *14
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *15
+  reader: *19
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *20
+  reader: *21
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *18
+  reader: *22
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *23
+  reader: *21
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *24
+  reader: *21
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *25
+  reader: &38 !ruby/object:Reader
+    name: Cherie Ondricka II
+    email: thomasinebosco@beerweinat.co
+    city: North Titus
+    street: Metz Rapids
+    house: '548'
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *26
+  reader: *27
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *28
+  reader: *21
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *29
+  reader: *14
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *30
+  reader: *27
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *31
+  reader: *21
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *32
+  reader: *19
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *33
+  reader: *27
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *34
+  reader: *19
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *35
+  reader: *22
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *33
+  reader: *22
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *36
+  reader: *22
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *37
+  reader: *38
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *39
+  reader: *22
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *15
+  reader: *27
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *40
+  reader: *27
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *12
+  reader: *14
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *39
+  reader: *38
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *41
+  reader: *27
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *42
+  reader: *19
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *43
+  reader: *38
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *44
+  reader: *22
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *45
+  reader: *21
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *39
+  reader: *21
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *46
+  reader: *27
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *47
+  reader: *22
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *34
+  reader: *14
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *48
+  reader: *14
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *49
+  reader: *27
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *50
+  reader: *38
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *51
+  reader: *22
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *52
+  reader: *22
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *53
+  reader: *14
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *30
+  reader: *27
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *42
+  reader: *27
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *25
+  reader: *27
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *54
+  reader: *27
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *32
+  reader: *14
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *48
+  reader: *38
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *41
+  reader: *21
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *30
+  reader: *19
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *55
+  reader: *38
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *25
+  reader: *21
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *17
+  reader: *14
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *56
+  reader: *14
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *57
+  reader: *27
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *56
+  reader: *19
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *58
+  reader: *14
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *59
+  reader: *27
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *60
+  reader: *21
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *20
+  reader: *27
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *33
+  reader: *21
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *32
+  reader: *14
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *61
+  reader: *14
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *54
+  reader: *19
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *34
+  reader: *38
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *47
+  reader: *22
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *62
+  reader: *14
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *33
+  reader: *27
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *41
+  reader: *22
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *36
+  reader: *38
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *42
+  reader: *38
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *63
+  reader: *21
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *43
+  reader: *38
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *32
+  reader: *22
+  date: 2019-05-16
+- !ruby/object:Order
+  book: *33
+  reader: *21
+  date: 2019-05-16
+:readers:
+- *27
+- *19
+- *21
+- *14
+- *38
+- *22
