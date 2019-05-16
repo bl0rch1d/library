@@ -4,8 +4,8 @@ require_relative 'entities/library'
 
 lib = Library.new
 
-# lib.data :generate
-# lib.data :save
-lib.data :load
-# lib.data :delete
+lib.generate_data
+lib.save_data
+lib.load_data
+lib.delete_data
 lib.statistics

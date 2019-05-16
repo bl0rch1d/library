@@ -49,7 +49,7 @@ module FakeDataGenerator
     end
 
     def orders
-      @orders = Array.new(rand(5..LIMIT)) do
+      Array.new(rand(5..LIMIT)) do
         Order.new(
           book: @books.sample,
           reader: @readers.sample,

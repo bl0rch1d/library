@@ -4,19 +4,9 @@ module Database
   DB_PATH = './db/'
   DB_FILE = 'db.yaml'
 
-  def data(action)
-    unless private_methods.include? :"#{action}_data"
-      raise ArgumentError, 'Invalid action'
-    end
-
-    Dir.mkdir(DB_PATH, 0o700) unless Pathname.new(DB_PATH).exist?
-
-    send :"#{action}_data"
-  end
-
-  private
-
   def save_data
+    check_dir
+
     data = {
       authors: @authors,
       books: @books,
@@ -28,6 +18,8 @@ module Database
   end
 
   def load_data
+    check_dir
+
     file = DB_PATH + DB_FILE
     path = Pathname.new(file).exist? ? file : './seed.yaml'
 
@@ -36,15 +28,19 @@ module Database
       yaml, [Symbol, Date, Author, Book, Reader, Order], [], true
     )
 
-    parse data
+    add_to_library data
   end
 
   def generate_data
+    check_dir
+
     data = FakeDataGenerator.call
-    parse data
+    add_to_library data
   end
 
   def delete_data
+    check_dir
+
     file = DB_PATH + DB_FILE
 
     return unless Pathname.new(file).exist?
@@ -52,10 +48,16 @@ module Database
     File.delete(file)
   end
 
-  def parse(data)
+  private
+
+  def add_to_library(data)
     @authors  = data[:authors]
     @books    = data[:books]
     @orders   = data[:orders]
     @readers  = data[:readers]
+  end
+
+  def check_dir
+    Dir.mkdir(DB_PATH, 0o700) unless Pathname.new(DB_PATH).exist?
   end
 end

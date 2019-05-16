@@ -1,17 +1,36 @@
 # frozen_string_literal: true
 
+require_relative 'errors'
+
 module Validate
+  include Errors
+
+  private
+
   def valid?(*props)
-    props.all? { |prop| prop.instance_of?(String) && !prop.empty? }
+    props.all? do |prop|
+      check_class(prop, String)
+
+      !prop.empty?
+    end
   end
 
   def book_valid?(title, author)
-    title.instance_of?(String) && !title.empty? && author.instance_of?(Author)
+    check_class(title, String)
+    check_class(author, Author)
+
+    !title.empty?
   end
 
   def order_valid?(book, reader, date)
-    book.instance_of?(Book) && \
-      reader.instance_of?(Reader) && \
-      date.instance_of?(Date)
+    check_class(book, Book)
+    check_class(reader, Reader)
+    check_class(date, Date)
+
+    true
+  end
+
+  def check_class(instance, klass)
+    raise WrongClassError unless instance.instance_of? klass
   end
 end
